@@ -9,7 +9,7 @@ import streamlit as st
 # Function to load and preprocess the data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("spam.csv", encoding='ISO-8859-1')
+    df = pd.read_csv("data/spam.csv", encoding='ISO-8859-1')
     df.drop(["Unnamed: 2", "Unnamed: 3", "Unnamed: 4"], axis=1, inplace=True)
     df.rename(columns={"v1": "category", "v2": "message"}, inplace=True)
     df.drop_duplicates(inplace=True)
